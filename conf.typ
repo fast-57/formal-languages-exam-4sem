@@ -6,6 +6,11 @@
   pagebreak()
 }
 
+#let authors = (
+  "Кудяков Артём",
+  "Данила Григорьев"
+)
+
 #let generate_title() = {
   set align(center)
   v(1.5cm)
@@ -14,7 +19,9 @@
   par("Материалы для подготовки к зачёту")
   v(1.5cm)
   set align(left)
-  text("Кудяков Артём" + "\n")
+  for person in authors {
+    text(person + "\n")
+  }
   v(1fr)
   set align(center)
   text("г. Саратов" + " " + str(datetime.today().year()))
